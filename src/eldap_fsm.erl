@@ -692,9 +692,9 @@ cancel_timer(Timer) ->
 
 %%% Sanity check of received packet
 check_tag(Data) ->
-    case asn1rt_ber:decode_tag(Data) of
+    case asn1rt_ber_bin:decode_tag(Data) of
 	{_Tag, Data1, _Rb} ->
-	    case asn1rt_ber:decode_length(Data1) of
+	    case asn1rt_ber_bin:decode_length(Data1) of
 		{{_Len,_Data2}, _Rb2} -> ok;
 		_ -> throw({error,decoded_tag_length})
 	    end;
