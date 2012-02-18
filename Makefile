@@ -1,7 +1,7 @@
 all: compile
 
 compile:
-	./rebar compile
+	./rebar compile xref
 
 clean:
 	./rebar clean
